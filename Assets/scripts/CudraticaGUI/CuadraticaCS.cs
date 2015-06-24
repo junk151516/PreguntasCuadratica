@@ -46,6 +46,9 @@ public class CuadraticaCS : MonoBehaviour {
 	public Text marcadorFinal;
 	public Text tituloProblema;
 	public Text funcionRTA;
+
+	public Text respuestaTexto;
+
 	// Use this for initialization
 	void Awake () {
 //		scCurva = GameObject.Find ("Curva").GetComponent<crearCurva2>();
@@ -197,15 +200,17 @@ public class CuadraticaCS : MonoBehaviour {
 
 
 			if(resultado){ // si pasa
-				
+				respuestaTexto.gameObject.SetActive(true);
+				Repuesta.gameObject.SetActive(false);
 				HabilitaRta(fondoRta);
 				Repuesta.text = "Correcto"; 
-			cantidadInterseptos.sprite = null; 
+				cantidadInterseptos.sprite = null; 
 				contadorCorrectas++;
 			//resultadoTextura.texture = 	tipoResultado[0];	// pone un true	
 			}else{
+				respuestaTexto.gameObject.SetActive(false);
 				HabilitaRta(fondoRta);
-				
+				Repuesta.gameObject.SetActive(true);
 				//Repuesta.text = "Incorrecto"; 
 				//resultadoTextura.texture = 	tipoResultado[1];	// pone un false	
 			}
@@ -284,7 +289,7 @@ public class CuadraticaCS : MonoBehaviour {
 	}
 	public void generarMarcadorFinal () {
 		ObjetoMarcadorFinal.SetActive(true);
-		marcadorFinal.text = "Puntaje ("+contadorCorrectas+"/"+(cantidadPregunta-1)+")";
+		marcadorFinal.text = "Puntaje\n"+contadorCorrectas+"/"+(cantidadPregunta-1);
 		if(contadorCorrectas>=limitePreguntas-1){
 			IndicadorResultado.text="Excelente, has comprendido el tema a la perfección.";
 
