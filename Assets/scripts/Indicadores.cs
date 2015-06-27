@@ -51,9 +51,6 @@ public class Indicadores : MonoBehaviour {
 	public bool banderainterceptos = false;
 	public bool banderaSliders = true;
 
-	public Text[] interceptoText;
-	public Text[] verticeText;
-
 	public Text tm ;
 
 
@@ -208,57 +205,11 @@ public class Indicadores : MonoBehaviour {
 		valores2.text = "";
 		funcion = "f(x) =  <color=#FFE600>"+a.ToString ("n2")+" </color>e";
 		funcion2= funcion2 + "<color=#00A7FF>"+b.ToString ("n2")+"</color>x"; 
-		
-		
 		valores.text = valores.text + funcion;
 		valores2.text = valores2.text +funcion2;
-		botonFuncion.sprite = funcionOff;
 
 	//	}
-		//if(banderainterceptos){
-			//valores.text = "interceptos\n";
-			interceptos = "x1=(-b+(b*b-4ac))/2a\nx2=(-b-(b*b-4ac))/2a";
-			interceptoText[0].text= "-(<color=#00A7FF>"+b.ToString ("n2")+"</color>)+"; 
-			interceptoText[1].text= "(<color=#00A7FF>"+b.ToString ("n2")+"</color>)²-4"+
-									"(<color=#FFE600>"+a.ToString ("n2")+"</color>)"+
-									"(<color=#3EFF00>"+c.ToString ("n2")+"</color>)";
-
-			interceptoText[2].text="2(<color=#FFE600>"+a.ToString ("n2")+"</color>)";
-			interceptoText[3].text= "-(<color=#00A7FF>"+b.ToString ("n2")+"</color>)-"; 
-			interceptoText[4].text= "(<color=#00A7FF>"+b.ToString ("n2")+"</color>)²-4"+
-									"(<color=#FFE600>"+a.ToString ("n2")+"</color>)"+
-									"(<color=#3EFF00>"+c.ToString ("n2")+"</color>)";
-		
-			interceptoText[5].text="2(<color=#FFE600>"+a.ToString ("n2")+"</color>)";
-			//valores.text = valores.text + interceptos;
-			if(((b*b)-(4*a*c))<0){ // no tiene interceptos
-			interceptoText[6].text="=IND";
-			interceptoText[7].text="=IND";
-						}else{
-			interceptoText[6].text="="+((-b+(Mathf.Sqrt ((b*b)-(4*a*c))))/(2*a)).ToString ("n2");
-			interceptoText[7].text="="+((-b-(Mathf.Sqrt ((b*b)-(4*a*c))))/(2*a)).ToString ("n2");
-			intersepto1Texto.text = ((-b+(Mathf.Sqrt ((b*b)-(4*a*c))))/(2*a)).ToString ("n2");
-			intersepto2Texto.text = ((-b-(Mathf.Sqrt ((b*b)-(4*a*c))))/(2*a)).ToString ("n2");
-			}
 
 
-			
-
-	//	}		
-	//	if(banderaVertice){
-			h = -b/(2*a);
-			k = a*(h)*(h)+b*(h)+c;
-			//valores.text = "Vertice (h,k) ("+h.ToString ("n2")+","+k.ToString ("n2")+")\n";
-			vertices = "h = -b/2a\nk = f(-b/2a)";
-			//valores.text = valores.text + vertices;
-			verticeText[0].text="-(<color=#00A7FF>"+b.ToString ("n2")+"</color>)";
-			verticeText[1].text="2(<color=#FFE600>"+a.ToString ("n2")+"</color>)";
-			verticeText[2].text=h.ToString ("n2");
-			//verticeText[3].text="2(<color=#FFE600>"+a.ToString ("n2")+"</color>)";
-			verticeText[4].text="= "+h.ToString ("n2");
-			verticeText[5].text="= "+k.ToString ("n2");
-			tm.text= "("+h.ToString ("n2")+","+k.ToString ("n2")+")";
-	
-	//	}		
 	}
 }
