@@ -44,6 +44,10 @@ public class CuadraticaCS : MonoBehaviour {
 	public Image cantidadInterseptos;
 	public Image ladoVertice;
 	public Text marcadorFinal;
+	public Text tituloProblema;
+	public Text funcionRTA;
+
+	public Text respuestaTexto;
 
 	// Use this for initialization
 	void Awake () {
@@ -78,7 +82,9 @@ public class CuadraticaCS : MonoBehaviour {
 	}
 
 	public void validarRespuesta () {
-	
+		funcionRTA.text = "<b><i>f(X)=(<color=#008000ff>"+a+"</color>)x²+"
+			+"(<color=#0000ffff>"+b+"</color>)x+"
+				+"(<color=#ffa500ff>"+c+"</color></i></b>)"; 
 		camara.transform.localPosition = new Vector3(0,0,-10);
 		b = float.Parse(valorDeB.text);		
 		coordenadasPlano[1].SetActive(false);
@@ -194,15 +200,17 @@ public class CuadraticaCS : MonoBehaviour {
 
 
 			if(resultado){ // si pasa
-				
+				respuestaTexto.gameObject.SetActive(true);
+				Repuesta.gameObject.SetActive(false);
 				HabilitaRta(fondoRta);
 				Repuesta.text = "Correcto"; 
-			cantidadInterseptos.sprite = null; 
+				cantidadInterseptos.sprite = null; 
 				contadorCorrectas++;
 			//resultadoTextura.texture = 	tipoResultado[0];	// pone un true	
 			}else{
+				respuestaTexto.gameObject.SetActive(false);
 				HabilitaRta(fondoRta);
-				
+				Repuesta.gameObject.SetActive(true);
 				//Repuesta.text = "Incorrecto"; 
 				//resultadoTextura.texture = 	tipoResultado[1];	// pone un false	
 			}
@@ -250,10 +258,10 @@ public class CuadraticaCS : MonoBehaviour {
 				+" encuentre un valor de <b><i><color=#0000ffff>b</color></i></b> tal que el vértice de la"
 				+" parábola esté a la ";
 		
-		if (ladoDelVertice == 0){
-			textoProblema.text = textoProblema.text + "<b>izquierda </b>"; // el ramdom es cero esta a la derecha.
+			if (ladoDelVertice == 0){ 
+				textoProblema.text = textoProblema.text + "<b><color=#EE7816>izquierda</color> </b>"; // el ramdom es cero esta a la derecha.
 		}else{
-			textoProblema.text = textoProblema.text + "<b>derecha </b>"; // el ramdom es cero esta a la derecha.
+				textoProblema.text = textoProblema.text + "<b><color=#EE7816>derecha</color> </b>"; // el ramdom es cero esta a la derecha.
 		}
 		if ( ladoDelVertice!= 0){ // izquierda != izquierda
 			coordenadasPlano[1].SetActive(true);
@@ -264,12 +272,13 @@ public class CuadraticaCS : MonoBehaviour {
 		}
 		cantidadDeInterceptos = Random.Range(0, 3);
 		textoProblema.text = textoProblema.text 
-			+"del eje <b><i>y</i></b>, que tenga <b>"+cantidadDeInterceptos+"</b> interceptos con el "
-				+"eje <b>x</b>"
+				+"del eje <b><i><color=#EE7816>y</color></i></b>, que tenga <b><color=#EE7816>"+cantidadDeInterceptos+"</color></b> interceptos con el "
+					+"eje <b><color=#EE7816>x</color></b>"
 				//+" <b><i><color=#008000ff>a</color></i></b> = "+a
 				//+" <b><i><color=#0000ffff>b</color></i></b> = ?"
 				//+" <b><i><color=#ffa500ff>c</color></i></b> = "+c
 				;
+			tituloProblema.text = "Pregunta "+ cantidadPregunta;
 			marcador.text = "Pregunta("+cantidadPregunta+"/"+limitePreguntas+")";
 			marcadorCorrectas.text = "Correctas("+contadorCorrectas+"/"+(cantidadPregunta-1)+")";
 			cantidadPregunta++;
@@ -280,7 +289,7 @@ public class CuadraticaCS : MonoBehaviour {
 	}
 	public void generarMarcadorFinal () {
 		ObjetoMarcadorFinal.SetActive(true);
-		marcadorFinal.text = "Puntaje ("+contadorCorrectas+"/"+(cantidadPregunta-1)+")";
+		marcadorFinal.text = "Puntaje\n"+contadorCorrectas+"/"+(cantidadPregunta-1);
 		if(contadorCorrectas>=limitePreguntas-1){
 			IndicadorResultado.text="Excelente, has comprendido el tema a la perfección.";
 
