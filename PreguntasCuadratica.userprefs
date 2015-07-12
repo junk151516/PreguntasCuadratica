@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\CudraticaGUI\CuadraticaCS.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Desktop\PreguntasExponencial-master\Assets\scripts\CudraticaGUI\CuadraticaCS.cs">
     <Files>
-      <File FileName="Assets\scripts\CudraticaGUI\CuadraticaCS.cs" Line="213" Column="5" />
+      <File FileName="..\..\..\Desktop\PreguntasExponencial-master\Assets\scripts\CudraticaGUI\CuadraticaCS.cs" Line="163" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
