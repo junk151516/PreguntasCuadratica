@@ -251,11 +251,11 @@ public class CuadraticaCS : MonoBehaviour {
 		//if (float.TryParse(stringToEdit, b));// print ("Succeeded, and the result is " + b);
 		//c = Random.Range(0.72, 0);
 		ladoDelVertice = Random.Range(0, 2);
-		textoProblema.text = "Sea <b><i>f(X)=<color=#008000ff>a</color>x²+"
-			+"<color=#0000ffff>b</color>x+"
+			textoProblema.text = "Sea <b><i>f(X)=<color=#31C632FF>a</color>x²+"
+				+"<color=#1E72C6FF>b</color>x+"
 				+"<color=#ffa500ff>c</color></i></b>"
-				+"\nDados <b><i><color=#008000ff>a</color></i></b>="+a+" y <b><i><color=#ffa500ff>c</color></i></b>="+c+","
-				+" encuentre un valor de <b><i><color=#0000ffff>b</color></i></b> tal que el vértice de la"
+					+"\nDados <b><i><color=#31C632FF>a</color></i></b>="+a+" y <b><i><color=#ffa500ff>c</color></i></b>="+c+","
+					+" encuentre un valor de <b><i><color=#1E72C6FF>b</color></i></b> tal que el vértice de la"
 				+" parábola esté a la ";
 		
 			if (ladoDelVertice == 0){ 
