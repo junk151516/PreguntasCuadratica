@@ -82,8 +82,8 @@ public class CuadraticaCS : MonoBehaviour {
 	}
 
 	public void validarRespuesta () {
-		funcionRTA.text = "<b><i>f(X)=(<color=#008000ff>"+a+"</color>)x²+"
-			+"(<color=#0000ffff>"+b+"</color>)x+"
+		funcionRTA.text = "<b><i>f(X)=(<color=#31c632ff>"+a+"</color>)x²+"
+			+"(<color=#1e72c6ff>"+b+"</color>)x+"
 				+"(<color=#ffa500ff>"+c+"</color></i></b>)"; 
 		camara.transform.localPosition = new Vector3(0,0,-10);
 		b = float.Parse(valorDeB.text);		
@@ -189,13 +189,13 @@ public class CuadraticaCS : MonoBehaviour {
 			ladoVertice.gameObject.SetActive(false);
 		}
 		if(banderaIntersepto&&banderaVertice ){
-			Repuesta.text = "La respuesta fue incorrecta ya que fallaste en aplicar las siguientes fórmulas correctamente.";
+			Repuesta.text = "Incorrecto, recuerda que:";
 		}
 		if(banderaIntersepto&&!banderaVertice ){
-			Repuesta.text = "La respuesta fue incorrecta ya que fallaste en aplicar la siguiente fórmula correctamente.";
+			Repuesta.text = "Incorrecto, recuerda que:";
 		}
 		if(!banderaIntersepto&&banderaVertice ){
-			Repuesta.text = "La respuesta fue incorrecta ya que fallaste en aplicar la siguiente fórmula correctamente.";
+			Repuesta.text = "Incorrecto, recuerda que:";
 		}
 
 
@@ -274,7 +274,7 @@ public class CuadraticaCS : MonoBehaviour {
 		textoProblema.text = textoProblema.text 
 				+"del eje <b><i><color=#EE7816>y</color></i></b>, que tenga <b><color=#EE7816>"+cantidadDeInterceptos+"</color></b> interceptos con el "
 					+"eje <b><color=#EE7816>x</color></b>"
-				//+" <b><i><color=#008000ff>a</color></i></b> = "+a
+				//+" <b><i><color=#31c632ff>"+aa</color></i></b> = "+a
 				//+" <b><i><color=#0000ffff>b</color></i></b> = ?"
 				//+" <b><i><color=#ffa500ff>c</color></i></b> = "+c
 				;
