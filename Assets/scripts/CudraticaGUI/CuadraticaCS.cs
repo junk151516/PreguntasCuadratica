@@ -168,7 +168,7 @@ public class CuadraticaCS : MonoBehaviour {
 			if (cantidadDeInterceptos != 2){ // dos interceptos 
 				resultado = false;
 				if (cantidadDeInterceptos == 1){	
-					Repuesta.text = "Incorrecto"; 		
+					Repuesta.text = "incorrecto se pedia 1 intersepto, recuerda que:"; 		
 					cantidadInterseptos.gameObject.SetActive(true);	
 					cantidadInterseptos.sprite = IMGcantidadInterseptos[1];
 					banderaIntersepto = true;
@@ -189,13 +189,22 @@ public class CuadraticaCS : MonoBehaviour {
 			ladoVertice.gameObject.SetActive(false);
 		}
 		if(banderaIntersepto&&banderaVertice ){
-			Repuesta.text = "Incorrecto, recuerda que:";
+			Repuesta.text = "Incorrecto, se pedian "+ cantidadDeInterceptos+" intersepto(s) y el vertice a la";
+			if(ladoDelVertice != 1){
+				Repuesta.text = Repuesta.text + " derecha, recuerda que:";
+			}else{
+				Repuesta.text = Repuesta.text + " izquierda, recuerda que:";
+			}
 		}
 		if(banderaIntersepto&&!banderaVertice ){
-			Repuesta.text = "Incorrecto, recuerda que:";
+			Repuesta.text = "Incorrecto, se pedian "+ cantidadDeInterceptos+" intersepto(s), recuerda que:";
 		}
 		if(!banderaIntersepto&&banderaVertice ){
-			Repuesta.text = "Incorrecto, recuerda que:";
+			if(ladoDelVertice != 1){
+				Repuesta.text = Repuesta.text + "Incorrecto, se pedia el vertice a la izquierda, recuerda que:";
+			}else{
+				Repuesta.text = Repuesta.text + "Incorrecto, se pedia el vertice a la derecha, recuerda que:";
+			}
 		}
 
 
