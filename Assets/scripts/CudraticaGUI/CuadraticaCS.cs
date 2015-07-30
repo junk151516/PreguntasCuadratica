@@ -84,7 +84,7 @@ public class CuadraticaCS : MonoBehaviour {
 	public void validarRespuesta () {
 		funcionRTA.text = "<b><i>f(X)=(<color=#31c632ff>"+a+"</color>)x²+"
 			+"(<color=#1e72c6ff>"+b+"</color>)x+"
-				+"(<color=#ffa500ff>"+c+"</color></i></b>)"; 
+				+"(<color=#ffa500ff>"+c+"</color></i></b>)\nRespondiste <color=#1e72c6ff>b = "+b+"</color>"; 
 		camara.transform.localPosition = new Vector3(0,0,-10);
 		b = float.Parse(valorDeB.text);		
 		coordenadasPlano[1].SetActive(false);
